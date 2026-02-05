@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corpus-builder"
+version = "0.1.0"
+description = "Extract & load German sentences from OpenSubtitles and Tatoeba"
+requires-python = ">=3.10"
+dependencies = [
+    "datasets>=3.0",
+    "requests>=2.31",
+]
+
+[project.scripts]
+corpus-build = "corpus_builder.__main__:main"
+
+[tool.setuptools]
+packages = ["corpus_builder", "corpus_builder.sources"]
+
+[tool.setuptools.package-dir]
+corpus_builder = "."
+"corpus_builder.sources" = "sources"

@@ -1,0 +1,2 @@
+[console_scripts]
+platt-translate = platt_translator.__main__:main

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "platt-translator"
+version = "0.1.0"
+description = "Parallel corpus generator: High German → Francique rhénan lorrain"
+requires-python = ">=3.10"
+dependencies = [
+    "langchain>=0.3",
+    "langchain-mistralai>=0.2",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+platt-translate = "platt_translator.__main__:main"
+
+[tool.setuptools]
+packages = ["platt_translator"]
+
+[tool.setuptools.package-dir]
+platt_translator = "."

@@ -1,0 +1,11 @@
+pyproject.toml
+./__init__.py
+./__main__.py
+./chains.py
+./pipeline.py
+platt_translator.egg-info/PKG-INFO
+platt_translator.egg-info/SOURCES.txt
+platt_translator.egg-info/dependency_links.txt
+platt_translator.egg-info/entry_points.txt
+platt_translator.egg-info/requires.txt
+platt_translator.egg-info/top_level.txt
