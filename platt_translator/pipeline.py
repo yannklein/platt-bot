@@ -5,9 +5,27 @@ import sys
 import time
 from pathlib import Path
 
+import httpx
 from langchain_mistralai import ChatMistralAI
 
 from .chains import build_translator_chain, build_validator_chain
+
+
+def _invoke_with_backoff(chain, inputs, *, max_attempts: int = 5, base_wait: float = 10.0):
+    """Invoke a LangChain chain, retrying on HTTP 429 with exponential backoff."""
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return chain.invoke(inputs)
+        except httpx.HTTPStatusError as exc:
+            if exc.response.status_code != 429 or attempt == max_attempts:
+                raise
+            wait = base_wait * (2 ** (attempt - 1))
+            print(
+                f"  Rate-limited (429). Waiting {wait:.0f}s before retry "
+                f"({attempt}/{max_attempts})…",
+                file=sys.stderr,
+            )
+            time.sleep(wait)
 
 
 def _load_input(path: Path) -> list[dict]:
@@ -52,6 +70,7 @@ def translate_one(
     translator_chain,
     validator_chain,
     max_retries: int = 2,
+    call_delay: float = 1.0,
 ) -> dict:
     """Translate a single sentence and validate it.
 
@@ -61,8 +80,11 @@ def translate_one(
     best_validation = None
 
     for attempt in range(1 + max_retries):
-        target = translator_chain.invoke({"text": text}).strip()
-        validation = validator_chain.invoke({"text": target}).strip().upper()
+        if attempt > 0:
+            time.sleep(call_delay)
+        target = _invoke_with_backoff(translator_chain, {"text": text}).strip()
+        time.sleep(call_delay)
+        validation = _invoke_with_backoff(validator_chain, {"text": target}).strip().upper()
 
         # Normalise to one of the expected labels
         if "VALID" in validation and "INVALID" not in validation:

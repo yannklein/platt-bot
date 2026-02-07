@@ -7,7 +7,7 @@ from pathlib import Path
 import requests
 
 # Monolingual German raw text (one sentence per line, gzipped)
-_URL = "https://opus.nlpl.eu/download.php?f=OpenSubtitles/v2018/mono/de.txt.gz"
+_URL = "https://object.pouta.csc.fi/OPUS-OpenSubtitles/v2018/mono/de.txt.gz"
 
 
 def fetch(output_dir: Path) -> Path:

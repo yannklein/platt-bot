@@ -8,7 +8,6 @@ version = "0.1.0"
 description = "Extract & load German sentences from OpenSubtitles and Tatoeba"
 requires-python = ">=3.10"
 dependencies = [
-    "datasets>=3.0",
     "requests>=2.31",
 ]
 

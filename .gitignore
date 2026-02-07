@@ -1,1 +1,4 @@
 */.env
+**/__pycache__
+corpus_builder/corpus_builder.egg-info
+**/.DS_store
