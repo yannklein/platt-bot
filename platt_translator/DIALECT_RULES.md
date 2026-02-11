@@ -12,8 +12,8 @@ Platt uses accented vowels to mark vowel qualities that differ from Standard Ger
 
 - **à** = a shifted toward o (machen → màche, was → wàs)
 - **ä** = open e-sound (Käse → Kääs, Hände → Hänn, Bäume → Bääm)
-- **é** = closed e-sound (Bett → Bétt, reden → rédde, fest → féscht, Kerze → Kérz)
-- **è** = open e-sound, typically from German ei or e (breit → brèèt, drehen → drèhe, Erde → Èèrd, Mehl → Mèhl)
+- **é** = closed e-sound (Bett → Bétt, fest → féscht, Kerze → Kérz)
+- **è** = open e-sound, typically from German ei or e (breit → brèèt, drehen → drèhe, Erde → Èad, Mehl → Mèhl)
 - **ì** = i shifted toward é (sein → sìnn, müde → mìed, dir → dìr)
 - **ò** = open o (ja → jò, an → òn, vom → vòm)
 - **ù** = u shifted toward o (um → ùm, wo → wù)
@@ -97,14 +97,13 @@ German **g** between vowels or after a vowel → **j**:
 ### SCH Combinations
 
 **schd-** before vowels, **scht-** before consonants, **-scht** at word-end:
-- Stadt → Schdadt
-- Kasten → Kaschde
-- sticken → schdigge
-- stricken → schtrigge
-- Straße → Schtroos
-- Bastler → Bäschtler
+- Stadt → Stàdt
+- Kasten → Kàschde
+- sticken → stigge
+- stricken → strigge
+- Straße → Stroos
 - Kiste → Kischt
-- Brust → Brüscht
+- Brust → Bruscht
 
 **schb-** before vowels, **schp-** before consonants:
 - Spiel → Schbiel
@@ -176,7 +175,7 @@ German **-chs-** / **-x-** → **cks** or **x**:
 | i (before nasal) | é / i | Kind → Kénd, Kinder → Kinner |
 | ü | ii / i | Füße → Fiiss, Schürze → Schirz |
 | u (short) | u / o | gut → gudd |
-| o | o / oo | Morgen → Mojen, groß → groos, Kröte → Krott |
+| o | o / oo | Morgen → Morje, groß → groos, Kröte → Krott |
 | Pferd | Peerd / Pèèrd | Pf → P shift |
 
 ---
@@ -187,14 +186,14 @@ German **-chs-** / **-x-** → **cks** or **x**:
 |--------|-------|
 | ich | ich |
 | du | du |
-| er | èr / a |
-| sie (she) | se |
-| es | ès / eus |
+| er | a |
+| sie (she) | eus |
+| es | eus |
 | wir | mir |
 | sie (they) | se |
-| der | dèr / da |
-| die | die |
-| das | das / dat |
+| der | da |
+| die | de |
+| das | das |
 | und | unn |
 | aus | uss |
 | auf | uff |
@@ -248,6 +247,7 @@ The **r** may vocalize at word-end but regains its sound when a vowel-initial en
 | was | wàs |
 | kein | kenn |
 | haben | hònn |
+| wissen | weesse |
 | sein (verb) | sìnn |
 | sein (possessive) | sin |
 | müde | mìed |
@@ -256,70 +256,71 @@ The **r** may vocalize at word-end but regains its sound when a vowel-initial en
 | ja | jò |
 | nicht | nitt |
 | Haus | Huss |
-| Frau | Fraa |
-| Frauen | Fraaen |
+| Frau | Frau |
+| Frauen | Frauen |
 | Gabel | Gawel |
 | Gabeln | Gawle |
 | Kind | Kénd |
 | Kinder | Kinner |
 | Füße | Fiiss |
-| Morgen | Mojen |
+| Morgen | Morje |
 | Jahr | Johr |
 | Nachbar | Nochber |
 | biegen | bieje |
 | fühlen | fihle |
-| Hallo | Boschur |
+| Hallo | Boschua |
 | Tschüss | Ädä |
-| Guten Morgen | Gudde Mojen |
-| Guten Tag | Bojhur / Boschur |
+| Guten Morgen | Gudde Morje |
+| Guten Tag | Boschua |
 | Gute Nacht | Gudd Naat |
 | Schlaf gut | Schloof gudd |
 | groß | groos |
 | Käse | Kääs |
 | Hut | Huut |
 | Ofen | Oowe |
-| Hose | Hoss |
-| Stuhl | Schduhl |
-| Straße | Schtroos |
-| Stadt | Schdadt |
-| Spiel | Schbiel |
-| Sprache | Schprooch |
+| Hose | Bux |
+| Stuhl | Stuhl |
+| Straße | Stroos |
+| Stadt | Stadt |
+| Spiel | Spiel |
+| Sprache | Sprooch |
 | Brot | Broot |
 | Pferd | Peerd |
-| Vater | Vadder |
-| Feder | Fèdder |
+| Vater | Vater |
+| Feder | Fèder |
 | Vogel | Voggel |
-| für | for |
+| für | fa |
 | vier | vier |
 | Zucker | Zugger |
 | Zopf | Zopp |
 | Pelz | Béls |
 | Holz | Hols |
-| Salz | Sals |
+| Salz | Sàls |
 | nichts | nix |
-| reden | rédde |
+| reden | schwätze |
+| sprechen | schwätze |
 | waschen | wésche |
 | tanzen | dònse |
 | rennen | rènne |
 | putzen | butze |
 | Hexe | Hèx |
-| Bauer | Buur |
+| Bauer | Bua |
 | Sorgen | Sorje |
 | Mond | Moond |
 | Tuch | Duuch |
 | hoch | hooch |
-| jung | jùng |
+| jung | jung |
 | jeder | jééder |
 | Loch | Loch |
 | Beine | Bèèn |
-| Schafe | Schääf |
+| Schafe | Schòòf |
 | Hände | Hänn |
 | Herren | Herre |
 | Berg | Bersch |
 | Ameise | Ämmétz |
 | Mauer | Muur |
-| Jupe/Rock | Schüpp |
-| Ingenieur | Injhéniör |
+| Jupe/Rock | Rock |
+| Ingenieur | Ingeniör |
 
 ---
 
@@ -340,7 +341,7 @@ The **r** may vocalize at word-end but regains its sound when a vowel-initial en
 **Platt:** Wàs màchsch du morje?
 
 **High German:** Das ist nicht so einfach.
-**Platt:** Dat is nitt so eifach.
+**Platt:** Das is nitt so eifach.
 
 **High German:** Er fühlt sich müde.
 **Platt:** Èr fihlt sich mìed.
