@@ -41,9 +41,15 @@ python training/prepare_dataset.py --include-questionable                   # al
 # https://colab.research.google.com/drive/1DiJyeGUXA93rqu8G2Qo-Iz9HI9Y2IVPe?usp=sharing
 
 # --- Deploy LoRA adapter to Hugging Face ---
-unzip platt-lorrain-lora.zip -d platt-lorrain-lora
-huggingface-cli login
-huggingface-cli upload yannklein/platt-bot platt-lorrain-lora/
+# (git lfs push is broken; use the Python API instead)
+python3 -c "
+from huggingface_hub import HfApi
+HfApi().upload_folder(
+    folder_path='platt-bot-hf-repo',
+    repo_id='yannklein/platt-bot',
+    repo_type='model'
+)
+"
 ```
 
 `platt_translator` requires `MISTRAL_API_KEY` set in environment or `.env` file (see `platt_translator/.env.example`).
