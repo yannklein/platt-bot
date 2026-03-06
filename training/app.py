@@ -7,7 +7,7 @@ import gradio as gr
 from together import Together
 
 client = Together(api_key=os.environ.get("TOGETHER_API_KEY"))
-MODEL_ID = os.environ.get("MODEL_ID", "mistralai/Mistral-7B-Instruct-v0.3")
+MODEL_ID = os.environ.get("MODEL_ID", "mistralai/Mistral-7B-Instruct-v0.2")
 
 SYSTEM_PROMPT = """Du bist ein freundlicher Assistent, der Platt Lorrain (Francique rhénan lorrain) spricht.
 Du antwortest IMMER auf Platt, egal in welcher Sprache die Frage gestellt wird.

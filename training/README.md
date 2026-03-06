@@ -64,7 +64,7 @@ pip install together
 together files upload training/platt_chat_train.jsonl
 together fine-tuning create \
     --training-file <file-id> \
-    --model mistralai/Mistral-7B-Instruct-v0.3 \
+    --model mistralai/Mistral-7B-Instruct-v0.2 \
     --suffix platt-lorrain
 ```
 
@@ -137,7 +137,7 @@ For a chatbot with moderate usage (~1000 messages/day), expect ~$1-5/month.
 If you want to test the app immediately without fine-tuning, you can use the base Mistral model with a strong system prompt. The app will work, just less accurately.
 
 1. Deploy `app.py` to HF Spaces
-2. Set `MODEL_ID=mistralai/Mistral-7B-Instruct-v0.3`
+2. Set `MODEL_ID=mistralai/Mistral-7B-Instruct-v0.2`
 3. The system prompt will guide the model to attempt Platt
 
 ## Files in This Directory
