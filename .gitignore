@@ -3,7 +3,6 @@
 corpus_builder/corpus_builder.egg-info
 **/.DS_store
 corpus/
-training/platt_chat_train.jsonl
 training/platt-lorrain-lora.zip
 training/platt-lorrain-lora
 platt-bot-hf-repo/
