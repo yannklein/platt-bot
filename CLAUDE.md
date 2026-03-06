@@ -4,12 +4,16 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Two-stage pipeline that builds a parallel corpus of Standard High German → Francique rhénan lorrain (Platt lorrain) for fine-tuning language models.
+Four-stage pipeline that builds a parallel corpus of Standard High German → Francique rhénan lorrain (Platt lorrain) and fine-tunes a language model on it.
 
 1. **`corpus_builder/`** — Extract & Load: fetches German sentences from OpenSubtitles and Tatoeba, filters and deduplicates them into `corpus/input.jsonl`.
 2. **`platt_translator/`** — Transform: translates each sentence using Mistral AI via LangChain, validates output, writes `corpus/output.jsonl`.
+3. **`training/prepare_dataset.py`** — Prepare: converts the parallel corpus into chat training format (`training/platt_chat_train.jsonl`) using varied conversation templates.
+4. **Model training** — Fine-tunes a model on the prepared dataset using a Google Colab notebook.
 
-The two modules share `corpus/` as the handoff directory.
+The first two modules share `corpus/` as the handoff directory.
+
+The trained model is deployed as a Hugging Face Space: https://huggingface.co/spaces/yannklein/platt-bot
 
 ## Commands
 
@@ -25,6 +29,21 @@ python -m corpus_builder --min-words 5 --max-words 30       # filter by word cou
 pip install -e ./platt_translator
 python -m platt_translator --input corpus/input.jsonl --output corpus/output.jsonl
 python -m platt_translator --text "Ich habe heute keine Zeit."   # single sentence
+
+# --- prepare_dataset (Prepare training data) ---
+python training/prepare_dataset.py                                          # defaults: corpus/output.jsonl → training/platt_chat_train.jsonl
+python training/prepare_dataset.py -i corpus/output.jsonl -o training/platt_chat_train.jsonl
+python training/prepare_dataset.py --examples-per-item 3                    # more examples per corpus item
+python training/prepare_dataset.py --include-questionable                   # also use QUESTIONABLE validations
+
+# --- Model training (Fine-tune) ---
+# Run via Google Colab notebook:
+# https://colab.research.google.com/drive/1DiJyeGUXA93rqu8G2Qo-Iz9HI9Y2IVPe?usp=sharing
+
+# --- Deploy LoRA adapter to Hugging Face ---
+unzip platt-lorrain-lora.zip -d platt-lorrain-lora
+huggingface-cli login
+huggingface-cli upload yannklein/platt-bot platt-lorrain-lora/
 ```
 
 `platt_translator` requires `MISTRAL_API_KEY` set in environment or `.env` file (see `platt_translator/.env.example`).
@@ -60,3 +79,17 @@ Input JSONL: `{"id": 1, "source": "German text", "origin": "tatoeba_de"}`
 Output JSONL: `{"id": 1, "source": "...", "target": "...", "validation": "VALID", "retries": 0}`
 
 The output is directly loadable with `datasets.load_dataset("json", data_files="corpus/output.jsonl")`.
+
+### prepare_dataset
+
+`training/prepare_dataset.py` converts the parallel corpus (`corpus/output.jsonl`) into chat-format training data (`training/platt_chat_train.jsonl`). It filters for VALID items, then generates multiple training examples per corpus entry using varied conversation templates (direct conversation, translation requests, Platt-to-Platt). A system prompt establishing the Platt persona is included in every example.
+
+## Model Training
+
+Fine-tuning is done in a Google Colab notebook: https://colab.research.google.com/drive/1DiJyeGUXA93rqu8G2Qo-Iz9HI9Y2IVPe?usp=sharing
+
+The notebook takes `training/platt_chat_train.jsonl` (produced by `prepare_dataset.py`) as input and produces a fine-tuned model.
+
+## Deployment
+
+The fine-tuned model is hosted as a Hugging Face Space: https://huggingface.co/spaces/yannklein/platt-bot

@@ -97,11 +97,11 @@ German **g** between vowels or after a vowel → **j**:
 ### SCH Combinations
 
 **schd-** before vowels, **scht-** before consonants, **-scht** at word-end:
-- Stadt → Stàdt
+- Stadt → Schdàdt
 - Kasten → Kàschde
 - sticken → stigge
 - stricken → strigge
-- Straße → Stroos
+- Straße → Schtroos
 - Kiste → Kischt
 - Brust → Bruscht
 
@@ -152,7 +152,7 @@ German **-chs-** / **-x-** → **cks** or **x**:
 
 ### V and F
 
-- **v** and **f** both represent the same sound: vier → vier, führen → fiehre, Vater → Vadder, Feder → Fèdder, Vogel → Voggel, für → for
+- **v** and **f** both represent the same sound: vier → vier, führen → fiehre, Vater → Vater, Feder → Fèdder, Vogel → Voggel, für → fer
 
 ### PL / TL / KL Alternation
 
@@ -187,7 +187,7 @@ German **-chs-** / **-x-** → **cks** or **x**:
 | ich | ich |
 | du | du |
 | er | a |
-| sie (she) | eus |
+| sie (she) | se |
 | es | eus |
 | wir | mir |
 | sie (they) | se |
@@ -280,8 +280,8 @@ The **r** may vocalize at word-end but regains its sound when a vowel-initial en
 | Ofen | Oowe |
 | Hose | Bux |
 | Stuhl | Stuhl |
-| Straße | Stroos |
-| Stadt | Stadt |
+| Straße | Schtroos |
+| Stadt | Schdàdt |
 | Spiel | Spiel |
 | Sprache | Sprooch |
 | Brot | Broot |
@@ -289,7 +289,7 @@ The **r** may vocalize at word-end but regains its sound when a vowel-initial en
 | Vater | Vater |
 | Feder | Fèder |
 | Vogel | Voggel |
-| für | fa |
+| für | fer |
 | vier | vier |
 | Zucker | Zugger |
 | Zopf | Zopp |
