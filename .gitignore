@@ -6,3 +6,4 @@ corpus/
 training/platt_chat_train.jsonl
 training/platt-lorrain-lora.zip
 training/platt-lorrain-lora
+platt-bot-hf-repo/
