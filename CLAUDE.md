@@ -40,7 +40,7 @@ python training/prepare_dataset.py --include-questionable                   # al
 # Run via Google Colab notebook:
 # https://colab.research.google.com/drive/1DiJyeGUXA93rqu8G2Qo-Iz9HI9Y2IVPe?usp=sharing
 
-# --- Deploy LoRA adapter to Hugging Face ---
+# --- Deploy LoRA adapter to Hugging Face (model repo) ---
 # (git lfs push is broken; use the Python API instead)
 python3 -c "
 from huggingface_hub import HfApi
@@ -48,6 +48,16 @@ HfApi().upload_folder(
     folder_path='platt-bot-hf-repo',
     repo_id='yannklein/platt-bot',
     repo_type='model'
+)
+"
+
+# --- Deploy Gradio app to Hugging Face (Space) ---
+python3 -c "
+from huggingface_hub import HfApi
+HfApi().upload_folder(
+    folder_path='platt-bot-hf-spaces',
+    repo_id='yannklein/platt-bot',
+    repo_type='space'
 )
 "
 ```
