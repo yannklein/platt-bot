@@ -9,7 +9,7 @@ Four-stage pipeline that builds a parallel corpus of Standard High German → Fr
 1. **`corpus_builder/`** — Extract & Load: fetches German sentences from OpenSubtitles and Tatoeba, filters and deduplicates them into `corpus/input.jsonl`.
 2. **`platt_translator/`** — Transform: translates each sentence using Mistral AI via LangChain, validates output, writes `corpus/output.jsonl`.
 3. **`training/prepare_dataset.py`** — Prepare: converts the parallel corpus into chat training format (`training/platt_chat_train.jsonl`) using varied conversation templates.
-4. **Model training** — Fine-tunes a model on the prepared dataset using a Google Colab notebook.
+4. **Model training** — Fine-tunes `mistralai/Mistral-7B-Instruct-v0.3` on the prepared dataset using a Google Colab notebook.
 
 The first two modules share `corpus/` as the handoff directory.
 
