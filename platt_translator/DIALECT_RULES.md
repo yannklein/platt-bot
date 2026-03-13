@@ -245,6 +245,7 @@ The **r** may vocalize at word-end but regains its sound when a vowel-initial en
 | German | Platt |
 |--------|-------|
 | was | wàs |
+| wie | wie |
 | kein | kenn |
 | haben | hònn |
 | wissen | weesse |

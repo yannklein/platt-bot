@@ -6,3 +6,4 @@ corpus/
 training/platt-lorrain-lora.zip
 training/platt-lorrain-lora
 platt-bot-hf-repo/
+hf_token.txt
